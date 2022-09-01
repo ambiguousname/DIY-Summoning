@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/TriangleLeft.png-d53c0ecd077566000c14d5f3af142616.image"
+
+[deps]
+
+source_file="res://TriangleLeft.png"
+dest_files=[ "res://.import/TriangleLeft.png-d53c0ecd077566000c14d5f3af142616.image" ]
+
+[params]
+
