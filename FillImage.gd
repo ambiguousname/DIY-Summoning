@@ -22,8 +22,10 @@ func _ready():
 	
 	self.texture = _imgTexture;
 
-func fillAt(rect):
-	_imageRender.blend_rect(image, rect, Vector2.ZERO);
+func fillAt(pos, size):
+	# Center the rect on the point:
+	var centered_rect = Rect2(pos - size/2, size);
+	_imageRender.blit_rect(image, centered_rect, pos - size/2);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
