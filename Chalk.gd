@@ -15,12 +15,13 @@ var Follower : PathFollow;
 func _ready():
 	SummoningCircle = get_node("/root/Spatial/MainGame/Summoning Circle")
 	Follower = get_parent()
-	print(self.global_translation)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	Follower.offset += 0.01 * delta;
+	# TODO: Fix the below to vary speeds, and not to fill on certain objects
+	# if we're not ready to fill them yet.
+	Follower.offset += 0.5 * delta;
 	
 	var summoningKids = SummoningCircle.get_children();
 	for i in range(summoningKids.size()):
@@ -29,4 +30,4 @@ func _process(delta):
 			var pos = Vector2(-851 * self.global_translation.x + 350, -909 * self.global_translation.z - 80) + offset;
 			# The image is 600 x 600, so we make sure to flip it:
 			pos = Vector2(pos.x, (300 - pos.y) + 300);
-			summoningKids[i].fillAt(pos, Vector2(200, 200));
+			summoningKids[i].fillAt(pos, Vector2(70, 70));
