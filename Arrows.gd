@@ -36,4 +36,3 @@ func _updateArrows():
 				arrow.set_rotation(PI/2);
 			"d":
 				arrow.set_rotation(PI);
-		print(arrow.rect_rotation);
