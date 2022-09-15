@@ -16,7 +16,6 @@ func _ready():
 	SummoningCircle = get_node("/root/Spatial/MainGame/Summoning Circle")
 	Follower = get_parent()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# TODO: Fix the below to vary speeds, and not to fill on certain objects
