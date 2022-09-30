@@ -16,6 +16,25 @@ func clearArrows():
 # var a = 2
 # var b = "text"
 
+var arrow_to_press = 0;
+
+var red = preload("res://ColorRed.tres");
+
+func pressNextArrow(direction):
+	var curr_arrow : TextureRect = get_child(arrow_to_press);
+	if direction in curr_arrow.name:
+		curr_arrow.material = red;
+		arrow_to_press += 1;
+	else:
+		clearPressed();
+	return get_child_count() - arrow_to_press;
+	
+
+func clearPressed():
+	arrow_to_press = 0;
+	for i in range(get_child_count()):
+		var curr_arrow : TextureRect = get_child(i);
+		curr_arrow.material = Material.new();
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
